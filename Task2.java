@@ -13,7 +13,7 @@ public class Task2 {
            marks=sc.nextInt();
            sum+=marks;
         }
-        double avgPerc=sum/n;
+        double avgPerc=(double)sum/n;
 
         System.out.println("Total Marks: "+sum+"/"+(n*100));
         System.out.println("Average Percentage: "+avgPerc);
