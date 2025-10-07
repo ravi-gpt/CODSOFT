@@ -1,3 +1,4 @@
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Task2 {
@@ -10,13 +11,19 @@ public class Task2 {
 
         System.out.println("Enter obtained marks out of 100 of each subject :");
         for(int i=1; i<=n; i++){
-           marks=sc.nextInt();
-           sum+=marks;
+            marks=sc.nextInt();
+            if(marks>100){
+                System.out.println("\nInvalid input: Enter correct marks (<100)");
+                sc.close();
+                System.exit(0);
+            }
+            sum+=marks;
         }
         double avgPerc=(double)sum/n;
 
-        System.out.println("Total Marks: "+sum+"/"+(n*100));
-        System.out.println("Average Percentage: "+avgPerc);
+        System.out.println("Total Marks: " +sum+ "/"+ (n*100));
+        DecimalFormat df=new DecimalFormat("0.##");
+        System.out.println("Average Percentage: " +df.format(avgPerc)+ "%");
 
         if(avgPerc>=90){
             System.out.println("Grade 'A' ");
